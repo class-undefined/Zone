@@ -1,0 +1,171 @@
+
+.header {
+  height: 60px;
+}
+
+.el-menu {
+  //background: none;
+  float: right;
+  background-color: transparent !important;
+  z-index: 100;
+}
+
+.el-menu-item {
+  background-color: transparent;
+}
+
+.el-menu.el-menu--horizontal {
+  border-bottom: none !important;
+}
+.el-menu--horizontal>.el-menu-item.is-active {
+  border-bottom: 2px solid #557174;
+  color: #303133;
+}
+.el-input {
+  margin: 10px 0;
+}
+
+.el-menu--horizontal > .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover, .el-menu--horizontal > .el-submenu .el-submenu__title:hover {
+  background-color: rgba(255, 255, 255, 0) !important;
+  border-radius: 3px 3px 0 0;
+}
+/* 分割线 */
+.el-divider{
+  display: none !important;
+}
+
+/* 菜单按钮 */
+.menu {
+  width: 36px;
+  display: none;
+  border: 1px solid #557174;
+  border-radius: 3px;
+  padding: 1px 0;
+  cursor: pointer;
+  float: left;
+  margin-top: 15px;
+}
+
+/* 菜单的三条线 */
+.menu i {
+  display: block;
+  height: 2px;
+  width: 24px;
+  margin: 6px auto;
+  border-radius: 2px;
+  background-color: #557174;
+  transition: .5s;
+  transform-origin: left;
+}
+
+/* 第一条线 */
+.menu-active i:nth-child(1) {
+  transform: rotate(41deg);
+  margin-left: 8px;
+}
+
+/* 第二条线 */
+.menu-active i:nth-child(2) {
+  //opacity: 0;
+  width: 0;
+}
+
+/* 第三条线 */
+.menu-active i:nth-child(3) {
+  transform: rotate(-41deg);
+  margin-left: 8px;
+}
+
+/* 登录注册 */
+.login-group {
+  margin: 0 auto;
+}
+
+/* <=992px */
+@media (max-width: 992px) {
+  .menu {
+    display: block
+  }
+  /* 导航菜单 */
+  .el-menu {
+    position: fixed !important;
+    background-color: rgba(255, 255, 255, .8) !important;
+    border-radius: 0 4px 4px 0;
+    border-right: 1px solid rgba(121, 187, 255, .5) !important;
+    border-bottom: 1px solid rgba(121, 187, 255, .5) !important;
+    width: 0; //隐藏
+    left: 0;
+    box-sizing: border-box;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    transition: .5s;
+  }
+  /* 菜单显示 */
+  .el-menu-show {
+    width: 260px;
+    padding: 0 20px !important;
+    border-right: 1px solid rgba(121, 187, 255, .5) !important;
+  }
+
+  .el-menu-show .el-menu-item-show {
+    display: block;
+    opacity: 1 !important;
+  }
+  .el-divider-show{
+    display: block !important;
+    background-color: #557174;
+    //width: 80%;
+  }
+  /* 隐藏 */
+  .el-menu-item {
+    display: none;
+    opacity: 0 !important;
+  }
+  /* 登录注册按钮 */
+  .login-group {
+    display: none !important;
+  }
+  .login-group-show{
+    display: block !important;
+  }
+}
+/* <=768px */
+@media (max-width: 768px) {
+  .menu {
+    display: block
+  }
+
+  .el-menu {
+    width: 0;
+    padding: 0;
+    border-right: none;
+  }
+
+  .el-menu .el-menu-item {
+    opacity: 0;
+  }
+
+  .el-menu-show {
+    width: 220px;
+    padding: 0 10px;
+    border-right: 1px solid rgba(121, 187, 255, .5);
+  }
+
+  .el-menu-show .el-menu-item-show {
+    opacity: 1;
+  }
+
+  /* 隐藏 */
+  .el-menu-item {
+    opacity: 0;
+  }
+  /* 登录注册按钮 */
+  .login-group {
+    display: none;
+  }
+  .login-group-show{
+    display: block;
+  }
+}
