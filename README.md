@@ -1,5 +1,6 @@
-# vue-topo-ts-env
+# Zone
 ### 环境配置：vue3.0 + ts + element-ui-plus + svg-sprite-loader
+### 一个小计划
 ## Project setup
 ```
 npm install
