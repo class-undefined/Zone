@@ -5,11 +5,11 @@
       <i></i>
       <i></i>
     </div>
-    <el-menu :default-active="activeIndex" :class="navClassName" mode="horizontal"
+    <el-menu :router="true" :default-active="activeIndex" :class="navClassName" mode="horizontal"
              @select="handleSelect">
-      <el-menu-item :class="elMenuItemClassName" index="1">圈子</el-menu-item>
-      <el-menu-item :class="elMenuItemClassName" index="2">工具</el-menu-item>
-      <el-menu-item :class="elMenuItemClassName" index="3">个人中心</el-menu-item>
+      <el-menu-item :class="elMenuItemClassName" index="/">首页</el-menu-item>
+      <el-menu-item :class="elMenuItemClassName" index="/Home">工具</el-menu-item>
+      <el-menu-item :class="elMenuItemClassName" index="/About">个人中心</el-menu-item>
       <el-divider :class="elDividerClassName"/>
 <!--      <el-button-group :class="loginGroupClassName">-->
 <!--        <el-button type="primary" plain>登录</el-button>-->

@@ -37,6 +37,7 @@
     "lint-staged": "^9.5.0",
     "svg-sprite-loader": "^5.1.1",
     "typescript": "~3.9.3",
+    "url-loader": "^4.1.1",
     "vue-cli-plugin-element-plus": "0.0.12",
     "vue-cli-plugin-svg-sprite-loader": "~2.0.1"
   },

@@ -4,9 +4,9 @@
       <nav-bar/>
     </el-header>
     <el-container>
-      <transition name="el-zoom-in-center">
-        <router-view/>
-      </transition>
+      <router-view v-slot="{ Component }">
+          <component :is="Component" />
+      </router-view>
     </el-container>
   </el-container>
 </template>
@@ -22,6 +22,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
+/*.el-zoom-in-center-enter-active, .el-zoom-in-center-leave-active {*/
+/*  transition: opacity 3s*/
+/*}*/
+
 .el-header, .el-footer {
   background-color: rgba(255, 255, 255, .6);
   border-bottom: 1px solid rgba(121, 187, 255, .5);
