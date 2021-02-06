@@ -1,12 +1,11 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Index from '../views/Index.vue'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
+import { store } from '@/store'
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Index',
-    component: Index,
+    component: () => import('../views/Index.vue'),
     meta: {
       title: 'Zone'
     }
@@ -14,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/Home',
     name: 'Home',
-    component: Home,
+    component: () => import('../views/Home.vue'),
     meta: {
       title: 'Zone - Home'
     }
@@ -22,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/About',
     name: 'About',
-    component: About,
+    component: () => import('../views/About.vue'),
     meta: {
       title: 'Zone - About'
     }
@@ -36,6 +35,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   if (to.meta.title) { // 如果设置标题，拦截后设置标题
     document.title = to.meta.title
+    store.commit('setRoute', to)
   }
   next()
 })

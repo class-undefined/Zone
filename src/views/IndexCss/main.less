@@ -139,7 +139,7 @@
 }
 
 .divider-container {
-  padding: 0 50px;
+  padding: 0 160px;
 }
 
 .divider {
@@ -147,9 +147,10 @@
   display:inline-block;
   //transform: translate(0%);
   height: 1px;
-  animation:zoom-in-center 1s cubic-bezier(.1,.68,1,1.62) ;
+  transform-origin: center;
+  animation:zoom-in-center 2s cubic-bezier(.68,-0.55,.27,1.55) !important;
   animation-fill-mode:forwards;
-  -webkit-animation:zoom-in-center 1s;
+  -webkit-animation:zoom-in-center 2s cubic-bezier(.68,-0.55,.27,1.55) !important;
   -webkit-animation-fill-mode:forwards;
 }
 
@@ -195,6 +196,6 @@
   }
 
   .divider-container {
-    padding: 0 20px;
+    padding: 0 35px;
   }
 }

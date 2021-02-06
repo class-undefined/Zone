@@ -1,4 +1,7 @@
-
+@keyframes zoom-in-center {
+  from{transform: scaleX(.2)}
+  to{transform: scaleX(1)}
+}
 .header {
   height: 60px;
 }
@@ -25,9 +28,11 @@
   margin: 10px 0;
 }
 
+/* 获取焦点 */
 .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover, .el-menu--horizontal > .el-submenu .el-submenu__title:hover {
-  background-color: rgba(255, 255, 255, 0) !important;
+  background-color: rgba(255, 255, 255, .3) !important;
   border-radius: 3px 3px 0 0;
+  //padding: 2px;
 }
 /* 分割线 */
 .el-divider{
@@ -54,7 +59,7 @@
   margin: 6px auto;
   border-radius: 2px;
   background-color: #557174;
-  transition: .5s;
+  transition: .8s cubic-bezier(.94,-1.15,0,1.78);
   transform-origin: left;
 }
 
@@ -86,6 +91,13 @@
   .menu {
     display: block
   }
+  /* 手机端加载导航特效，pc显示效果不好，砍掉 */
+  .is-active{
+    background-color: rgba(255,255,255,0) !important;
+    transform-origin: 50%;
+    animation: zoom-in-center .8s cubic-bezier(.68,-0.55,.27,1.55);
+    animation-fill-mode: forwards;
+  }
   /* 导航菜单 */
   .el-menu {
     position: fixed !important;
@@ -100,18 +112,24 @@
     display: flex;
     flex-direction: column;
     height: calc(100% - 60px);
-    transition: .5s;
+    transition: .5s cubic-bezier(.4,.18,.39,1.62);
   }
   /* 菜单显示 */
   .el-menu-show {
     width: 260px;
     padding: 0 20px !important;
-    border-right: 1px solid rgba(121, 187, 255, .5) !important;
+    border-right: 1px solid #839b97 !important;
+    border-radius: 0;
+    transition: .5s cubic-bezier(.43,.43,.39,1.62);
   }
-
+  /* 显示菜单items文字 */
   .el-menu-show .el-menu-item-show {
     display: block;
     opacity: 1 !important;
+  }
+  /* 移动端导航项取消focus特效 */
+  .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover, .el-menu--horizontal > .el-submenu .el-submenu__title:hover {
+    background-color: rgba(255, 255, 255, 0) !important;
   }
   .el-divider-show{
     display: block !important;
@@ -141,6 +159,7 @@
     width: 0;
     padding: 0;
     border-right: none;
+    transition: .5s cubic-bezier(.68,-0.55,.27,1.55);
   }
 
   .el-menu .el-menu-item {

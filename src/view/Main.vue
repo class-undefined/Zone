@@ -28,7 +28,7 @@ export default defineComponent({
 
 .el-header, .el-footer {
   background-color: rgba(255, 255, 255, .6);
-  border-bottom: 1px solid rgba(121, 187, 255, .5);
+  border-bottom: 1px solid #839b97;
   height: 60px;
   line-height: 60px;
   margin-bottom: 5px;

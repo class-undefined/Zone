@@ -1,12 +1,22 @@
 import { createStore } from 'vuex'
+import { mutations } from '@/store/api/mutations'
+import { getters } from '@/store/api/getters'
+import { ref } from 'vue'
 
-export default createStore({
+export const store = createStore({
   state: {
+    routerUrl: {
+      path: '/',
+      name: 'Index',
+      component: undefined,
+      meta: {
+        title: 'Zone'
+      }
+    },
+    path: ref('/')
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+  getters,
+  mutations,
+  actions: {},
+  modules: {}
 })

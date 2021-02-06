@@ -11,20 +11,20 @@
       <el-menu-item :class="elMenuItemClassName" index="/Home">工具</el-menu-item>
       <el-menu-item :class="elMenuItemClassName" index="/About">个人中心</el-menu-item>
       <el-divider :class="elDividerClassName"/>
-<!--      <el-button-group :class="loginGroupClassName">-->
-<!--        <el-button type="primary" plain>登录</el-button>-->
-<!--        <el-button plain>注册</el-button>-->
-<!--      </el-button-group>-->
+      <!--      <el-button-group :class="loginGroupClassName">-->
+      <!--        <el-button type="primary" plain>登录</el-button>-->
+      <!--        <el-button plain>注册</el-button>-->
+      <!--      </el-button-group>-->
     </el-menu>
   </div>
 </template>
 <script>
 import { ref, computed } from 'vue'
-
+import router from '@/router'
 export default {
   name: 'NavBar',
-  setup () {
-    const activeIndex = ref('1')
+  setup (props, context) {
+    const activeIndex = router.currentRoute.value.path
     /* 计算菜单按钮单击次数,以此判断打开还是关闭 */
     const menuBtnClickCount = ref(0)
     const activeIndex2 = ref('1')
@@ -71,6 +71,7 @@ export default {
 
 <style lang="less" scoped>
 @import "main";
+
 h1 {
   margin: 0;
   float: left;
