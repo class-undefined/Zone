@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <!--    will add flex-->
     <div class="text-container">
       <div class="line-down">
         <svg-icon name="st-github" :size="50"/>
