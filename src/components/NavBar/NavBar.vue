@@ -7,9 +7,11 @@
     </div>
     <el-menu :router="true" :default-active="activeIndex" :class="navClassName" mode="horizontal"
              @select="handleSelect">
-      <el-menu-item :class="elMenuItemClassName" index="/">首页</el-menu-item>
-      <el-menu-item :class="elMenuItemClassName" index="/Home">工具</el-menu-item>
-      <el-menu-item :class="elMenuItemClassName" index="/About">个人中心</el-menu-item>
+      <el-menu-item v-for="route in routes"
+                    :class="elMenuItemClassName"
+                    :index="route.path"
+                    :key="route.path">
+        {{route.name}}</el-menu-item>
       <el-divider :class="elDividerClassName"/>
       <!--      <el-button-group :class="loginGroupClassName">-->
       <!--        <el-button type="primary" plain>登录</el-button>-->
@@ -24,6 +26,7 @@ import router from '@/router'
 export default {
   name: 'NavBar',
   setup (props, context) {
+    const routes = router.getRoutes()
     const activeIndex = router.currentRoute.value.path
     /* 计算菜单按钮单击次数,以此判断打开还是关闭 */
     const menuBtnClickCount = ref(0)
@@ -57,6 +60,7 @@ export default {
     return {
       handleSelect,
       addMenuClickCount,
+      routes,
       activeIndex,
       activeIndex2,
       menuBtnClassName,

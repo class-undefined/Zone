@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { store } from '@/store'
-
+/* 支持通过路由加载导航栏 */
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Index',
+    name: '首页',
     component: () => import('../views/Index.vue'),
     meta: {
       title: 'Zone'
@@ -12,7 +12,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/Home',
-    name: 'Home',
+    name: '工具',
     component: () => import('../views/Home.vue'),
     meta: {
       title: 'Zone - Home'
@@ -20,7 +20,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/About',
-    name: 'About',
+    name: '个人中心',
     component: () => import('../views/About.vue'),
     meta: {
       title: 'Zone - About'
